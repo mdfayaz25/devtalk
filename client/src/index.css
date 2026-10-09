@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 10 12 17;
+    --surface: 17 20 27;
+    --surface-2: 24 28 37;
+    --surface-3: 34 39 51;
+    --line: 36 41 54;
+    --ink: 232 235 242;
+    --muted: 136 143 163;
+    color-scheme: dark;
+  }
+  html, body, #root { height: 100%; }
+  body { @apply bg-bg font-sans text-ink antialiased; }
+  h1, h2, h3 { @apply font-display tracking-tight; text-wrap: balance; }
+  ::selection { @apply bg-brand-500/40; }
+}
+
+@layer components {
+  .tabular { font-variant-numeric: tabular-nums; }
+  .scrollbar-thin { scrollbar-width: thin; scrollbar-color: rgb(var(--surface-3)) transparent; }
+  .kbd { @apply rounded border border-line bg-surface-2 px-1.5 py-0.5 font-mono text-[10.5px] text-muted; }
+  .grid-bg { background-image: radial-gradient(rgb(var(--line)) 1px, transparent 1px); background-size: 22px 22px; }
+}
